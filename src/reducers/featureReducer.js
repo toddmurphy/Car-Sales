@@ -1,3 +1,6 @@
+// IMPORT 'action types' from featureActions
+import {ADD_FEATURE, REMOVE_FEATURE} from '../actions/featureActions';
+
 
 // 'initialState' is our initial state and data to pass to 'featureReducer'
 const initialState = {
@@ -20,7 +23,14 @@ const initialState = {
 export const featureReducer = (state = initialState, action) => {
     console.log(state, action)
     switch(action.type){
-        case 'FEATURE1':
+        case ADD_FEATURE:
+            return{
+                ...state,
+                //add logic to add feature
+                // additionalFeatures:
+            };
+
+        case REMOVE_FEATURE:
             return{
                 ...state,
             }
