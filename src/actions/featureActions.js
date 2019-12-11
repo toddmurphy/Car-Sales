@@ -10,16 +10,19 @@ export const REMOVE_FEATURE = 'REMOVE_FEATURE';
 
 
 //ACTION CREATORS
-export const addFeature = () => {
+export const addFeature = (feature) => {
     //action
     return{
-        type: ADD_FEATURE
+        type: ADD_FEATURE,
+        payload: feature
     }
 }
 
-export const removeFeature = () => {
+
+export const deleteFeature = (feature) => {
     //action
     return{
-        type: REMOVE_FEATURE
+        type: REMOVE_FEATURE,
+        payload: feature
     }
 }

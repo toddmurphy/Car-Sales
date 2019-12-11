@@ -6,17 +6,21 @@ import AddedFeatures from './components/AddedFeatures';
 import AdditionalFeatures from './components/AdditionalFeatures';
 import Total from './components/Total';
 
+import {addFeature, deleteFeature} from './actions/featureActions';
+
 const App = ({additionalFeatures, additionalPrice, car}) => {
   
   //move this state data to 'featureReducer' -->then delete state
   
 
-  const removeFeature = item => {
+  const removeFeature = feature => {
     // dispatch an action here to remove an item
+    deleteFeature(feature)
   };
 
-  const buyItem = item => {
+  const buyItem = feature => {
     // dipsatch an action here to add an item
+    addFeature(feature)
   };
 
   return (
@@ -26,7 +30,7 @@ const App = ({additionalFeatures, additionalPrice, car}) => {
         <AddedFeatures car={car} />
       </div>
       <div className="box">
-        <AdditionalFeatures additionalFeatures={additionalFeatures} />
+        <AdditionalFeatures additionalFeatures={additionalFeatures} buyItem={buyItem} />
         <Total car={car} additionalPrice={additionalPrice} />
       </div>
     </div>
@@ -43,5 +47,5 @@ const mapStateToProps = (state) => {
 export default connect(
   mapStateToProps,
   //add 'featureActions' to emtpy object --> connect share data to 'actions'
-  {}, 
+  {addFeature, deleteFeature}, 
 )(App);
