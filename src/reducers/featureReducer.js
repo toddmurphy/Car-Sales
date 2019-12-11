@@ -1,5 +1,5 @@
 
-
+// 'initialState' is our initial state and data to pass to 'featureReducer'
 const initialState = {
     additionalPrice: 0,
     car: {

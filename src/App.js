@@ -6,7 +6,8 @@ import AddedFeatures from './components/AddedFeatures';
 import AdditionalFeatures from './components/AdditionalFeatures';
 import Total from './components/Total';
 
-const App = () => {
+const App = ({additionalFeatures, additionalPrice, car}) => {
+  
   //move this state data to 'featureReducer' -->then delete state
   
 
@@ -31,6 +32,13 @@ const App = () => {
     </div>
   );
 };
+
+// setup mapStateToProps fuction to link to 'initialState'
+const mapStateToProps = (state) => {
+  return {
+    ...state
+  }
+}
 
 export default connect(
   mapStateToProps,
