@@ -8,7 +8,7 @@ import Total from './components/Total';
 
 import {addFeature, deleteFeature} from './actions/featureActions';
 
-const App = ({additionalFeatures, additionalPrice, car}) => {
+const App = ({additionalFeatures, additionalPrice, car, deleteFeature, addFeature}) => {
   
   //move this state data to 'featureReducer' -->then delete state
   
