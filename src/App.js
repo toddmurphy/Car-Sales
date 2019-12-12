@@ -27,7 +27,7 @@ const App = ({additionalFeatures, additionalPrice, car, deleteFeature, addFeatur
     <div className="boxes">
       <div className="box">
         <Header car={car} />
-        <AddedFeatures car={car} />
+        <AddedFeatures car={car} removeFeature={removeFeature} />
       </div>
       <div className="box">
         <AdditionalFeatures additionalFeatures={additionalFeatures} buyItem={buyItem} />
@@ -44,8 +44,7 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(
-  mapStateToProps,
+export default connect(mapStateToProps, {addFeature, deleteFeature})(App);
   //add 'featureActions' to emtpy object --> connect share data to 'actions'
-  {addFeature, deleteFeature}, 
-)(App);
+   
+
