@@ -44,7 +44,7 @@ export const featureReducer = (state = initialState, action) => {
 
         const newFeatures = state.car.features.filter((item) => {
           return item.id !== action.payload.id
-        })
+        });
         console.log(action.payload.id)
         console.log(newFeatures)
 

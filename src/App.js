@@ -40,7 +40,10 @@ const App = ({additionalFeatures, additionalPrice, car, deleteFeature, addFeatur
 // setup mapStateToProps fuction to link to 'initialState'
 const mapStateToProps = (state) => {
   return {
-    ...state
+    // ...state
+    car: state.car,
+    additionalFeatures: state.additionalFeatures,
+    additionalPrice: state.additionalPrice
   }
 }
 
